@@ -1,0 +1,128 @@
+    <section ng-controller="TutorialCtrl" class="row">
+        <article class="col-lg-3 col-md-3 col-sm-2">
+            <div class="sectionTitle">Tutorial tests</div>
+
+            <div class="links">
+                <a href="#/anotherPageTest">anotherPageTest</a>
+                <a href="#/page2">Page 2</a>
+                <a href="#/page3">Page 3</a>
+                <a href="#/badLink">Bad link</a>
+            </div>
+
+        </article>
+
+        <article class="col-lg-3 col-md-3 col-sm-2">
+            <div class="sectionTitle">Working with controllers</div>
+
+            <h1 class="appTitle">Title: {{tutorialObject.title}}</h1>
+            <p class="appSubTitle">Subtitle: {{tutorialObject.subtitle}}</p>
+        </article>
+
+        <article class="col-lg-3 col-md-3 col-sm-2">
+            <div class="sectionTitle">Binding a model to its view using ng-click directive</div>
+
+            <p class="appTextContent">{{tutorialObject.textContent}}</p>
+            <p class="appBindout">Bind Output: {{tutorialObject.bindOutput}}</p>
+            <button ng-click="timesTwo()">Multiply</button>
+        </article>
+
+        <article class="col-lg-3 col-md-3 col-sm-2">
+            <div class="sectionTitle">Binding a model to its view using ng-click directive</div>
+
+            <p class="appBindout">Basket: {{tutorialObject.bindBasketItem}}</p>
+            <button ng-click="addOne()">Add itens</button>
+            <button ng-click="addOne()">Add itens</button>
+        </article>
+
+        <article class="col-lg-3 col-md-3 col-sm-2">
+            <div class="sectionTitle">Two way data binding</div>
+
+            <div class="inputsFLName">
+                <div class="fNameContainer">
+                    <p>The guys below are so bound by Ng-model directive</p>
+                    <p><b>{{tutorialObject.firstName + " " + tutorialObject.lastName | uppercase}}</b></p>
+                </div>
+
+                <div class="fNameContainer">
+                    <label for="firstName">First Name</label>
+                    <input id="firstName" ng-model="tutorialObject.firstName">
+                </div>
+
+                <div class="lNameContainer">
+                    <label for="lastName">Last Name</label>
+                    <input id="lastName" ng-model="tutorialObject.lastName">
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <section class="row">
+        <article class="col-lg-3 col-md-3 col-sm-2">
+            <div class="sectionTitle">Custom directives</div>
+
+            <div class="inputsFLName">
+                <jl-warm-welcome></jl-warm-welcome>
+                <p jl-warm-welcome></p>
+
+                <jl-farewell></jl-farewell>
+                <p jl-farewell></p>
+            </div>
+        </article>
+
+         <article class="col-lg-3 col-md-3 col-sm-2">
+            <div class="sectionTitle">Services</div>
+
+            <div class="inputsFLName">
+                <h5>{{tutorialObject.bindGreatCalculationTitle}}</h5>
+                <input ng-model="tutorialObject.bindGreatCalculationFieldA" />
+                <input ng-model="tutorialObject.bindGreatCalculationFieldB" />
+                <p>{{tutorialObject.bindGreatCalculation }}</p>
+                <button ng-click="greatMultiplication()">Calculate</button>
+            </div>
+        </article>
+    </section>
+
+    <section ng-controller="FilterCompCtrl" class="row">
+        <article class="col-lg-3 col-md-3 col-sm-2">
+            <div class="sectionTitle">Filter components</div>
+
+            <div class="inputsFLName">
+                <h5>{{filterCompObject.title}}</h5>
+                <p>{{filterCompObject.subTitle}}</p>
+
+                <label for="upperCaseText">{{filterCompObject.upperCaseText | uppercase }}</label>
+                <input id="upperCaseText" ng-model="filterCompObject.upperCaseText" />
+                <br />
+                <label for="lowerCaseText">{{filterCompObject.lowerCaseText | lowercase }}</label>
+                <input id="lowerCaseText" ng-model="filterCompObject.lowerCaseText" />
+
+                <label for="textLimiter">{{filterCompObject.limitedTextField + ": " + filterCompObject.limitedTextNumber}}</label>
+                <input type="number" id="textLimiter" step="1" ng-model="filterCompObject.limitedTextNumber">
+                <p>{{filterCompObject.limitedTextCropped | limitTo: filterCompObject.limitedTextNumber}}</p>
+            </div>
+        </article>
+
+        <article class="col-lg-3 col-md-3 col-sm-2">
+                <div class="sectionTitle">Filter components extension and more use of ng-models</div>
+                <h2>Product: {{filterCompObject.productName}}</h2>
+
+                <img src="http://{{filterCompObject.imageSrc}}" title="{{filterCompObject.imageTitle}}" alt="{{filterCompObject.imageTitle}}" width="{{filterCompObject.imageSize}}" />
+
+                <!-- <input type="number" id="textLimiter" step="1" ng-model="filterCompObject.imageSize"> -->
+
+                <div class="sizeNColour">Size</div>
+                <select>
+                    <option ng-repeat="x in filterCompObject.productSize">{{x.size}}</option>
+                </select>
+
+                <div class="sizeNColour">Colour</div>
+                <select>
+                    <option ng-repeat="x in filterCompObject.productSize">{{x.colour}}</option>
+                </select>
+
+                <p>Price: {{filterCompObject.productPrice | currency: 'R$' }}</p>
+                <label for="priceLimiter">Change the price</label>
+                <input type="number" id="priceLimiter" step="1" ng-model="filterCompObject.productPrice">
+            </div>
+        </article>
+    </section>

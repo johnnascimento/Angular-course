@@ -1,0 +1,13 @@
+/*Angular app css*/
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+
+html {
+    background-color: #ecf0f1;
+}
+
+body {
+    font-family: 'Roboto', 'Open Sans', 'sans-serif';
+}

@@ -1,0 +1,23 @@
+{
+   "name": "angularApp",
+   "version": "0.0.1",
+   "description": "My project using Angular",
+   "dependencies": {
+        "express": "*"
+    },
+   "engine": "node >=0.6.x",
+   "scripts": {
+         "start": "node server.js"
+    },
+   "main": "server.js",
+   "repository": {
+        "type": "git",
+        "url": ""
+    },
+   "author": "angularApp",
+   "license": "angularApp",
+   "bugs": {
+        "url": ""
+            },
+   "homepage": "/"
+}
